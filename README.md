@@ -18,7 +18,6 @@ Request:<br/>
 curl -u "username:password" "https://example.com/api/myrating?end_date={END_DATE}&start_date={START_DATE}"<br/>
 Response:
 ```json
-response:
 {
     "data": [
         {
