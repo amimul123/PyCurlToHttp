@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+import requests
+import json
+from datetime import datetime, timedelta
+
+username = 'your user name'
+password = 'your pass word'
+credential = (username,password)
+
+# token information
+tokenUrl= "https://example.com/api/token"
+tokeRes = requests.get(tokenUrl, auth= credential)
+
+jsonToken = json.loads(tokeRes.text)
+print(jsonToken)
+
+# Ratings and Stars
+params = (
+    ('end_date', '2022-02-02'),
+    ('start_date', '2022-02-01'),
+)
+rating_url = 'https://example.com/api/myrating'
+ratingRes = requests.get(rating_url, params=params, auth=credential)
+jsonRating =  json.loads(ratingRes.text)
+#jsonRating
+
+
+ratings = jsonRating.get('all_time', [])
+for rating in ratings:
+    created_at = datetime.fromisoformat(rating.get('created_at')).strftime('%Y-%m-%d %H:%M:%S')
+    count = rating.get('count',0)
+    average = rating.get('average',0.00)
+    version = rating.get('version')
+    breakdown = rating.get('breakdown',{})
+    print(created_at, count, average, version, breakdown)
+
+
+
+
