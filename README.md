@@ -2,9 +2,10 @@
 Convert curl request to HTTP (API) request in Python
 
 # curl request & response (Token)
-curl -u "username:password" "https://example.com/api/token"
+Request:<br/>
+curl -u "username:password" "https://example.com/api/token" <br/>
+Response:
 ```json
-response:
 {
     "project": "project id",
     "token": "your token",
@@ -13,8 +14,9 @@ response:
 ```
 
 # curl request & response (Rating)
-curl -u "username:password" "https://example.com/api/myrating?end_date={END_DATE}&start_date={START_DATE}"
-
+Request:<br/>
+curl -u "username:password" "https://example.com/api/myrating?end_date={END_DATE}&start_date={START_DATE}"<br/>
+Response:
 ```json
 response:
 {
