@@ -10,6 +10,7 @@ password = 'your password'
 credential = (username,password)
 
 # token information
+# curl (curl -u "username:password" "https://example.com/api/token")
 tokenUrl= "https://example.com/api/token"
 tokeRes = requests.get(tokenUrl, auth= credential)
 
@@ -17,6 +18,7 @@ jsonToken = json.loads(tokeRes.text)
 print(jsonToken)
 
 # Ratings and Stars
+# curl (curl -u "username:password" "https://example.com/api/myrating?end_date={END_DATE}&start_date={START_DATE}")
 params = (
     ('end_date', '2022-02-02'),
     ('start_date', '2022-02-01'),
