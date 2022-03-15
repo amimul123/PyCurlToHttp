@@ -5,8 +5,8 @@ import requests
 import json
 from datetime import datetime, timedelta
 
-username = 'your user name'
-password = 'your pass word'
+username = 'your username'
+password = 'your password'
 credential = (username,password)
 
 # token information
