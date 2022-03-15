@@ -27,14 +27,13 @@ jsonRating =  json.loads(ratingRes.text)
 #jsonRating
 
 
-ratings = jsonRating.get('all_time', [])
+ratings = jsonRating.get('data', [])
 for rating in ratings:
     created_at = datetime.fromisoformat(rating.get('created_at')).strftime('%Y-%m-%d %H:%M:%S')
     count = rating.get('count',0)
-    average = rating.get('average',0.00)
-    version = rating.get('version')
-    breakdown = rating.get('breakdown',{})
-    print(created_at, count, average, version, breakdown)
+    value = rating.get('value',0.00)
+    rating = rating.get('rating',0)
+    print(created_at, count, value, rating)
 
 
 
